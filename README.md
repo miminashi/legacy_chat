@@ -1,5 +1,7 @@
 # legacy_chat
 
+![legacy_chat screenshot](legacy_chat.png)
+
 2000年代初頭のインターネットにあった感じのチャット
 
 ## 必要なもの
