@@ -41,3 +41,7 @@ http://localhost:8080/ にアクセスする
 - https://www.tohoho-web.com/ex/http.htm
 - https://www.tohoho-web.com/wwwcgi3.htm
 - https://www.atmarkit.co.jp/ait/articles/1406/20/news007_2.html
+
+## その他
+
+- favicon from [here](https://favicon.io/emoji-favicons/cupcake/)
