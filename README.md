@@ -11,7 +11,25 @@
 ## 起動方法
 
 ```sh
+git clone https://github.com/miminashi/legacy_chat.git
+cd legacy_chat
 ./run.sh
+```
+
+または、
+
+```sh
+touch log
+chmod o+w log
+docker run --rm -t -v $(pwd)/log:/var/www/cgi-bin/log -p 8080:80 miminashi/legacy_chat
+```
+
+## 開発
+
+```sh
+git clone https://github.com/miminashi/legacy_chat.git
+cd legacy_chat
+./debug.sh
 ```
 
 http://localhost:8080/ にアクセスする
@@ -23,3 +41,7 @@ http://localhost:8080/ にアクセスする
 - https://www.tohoho-web.com/ex/http.htm
 - https://www.tohoho-web.com/wwwcgi3.htm
 - https://www.atmarkit.co.jp/ait/articles/1406/20/news007_2.html
+
+## その他
+
+- favicon from [here](https://favicon.io/emoji-favicons/cupcake/)

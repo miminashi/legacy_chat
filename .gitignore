@@ -1,1 +1,2 @@
-www/cgi-bin/log
+log
+log.debug
