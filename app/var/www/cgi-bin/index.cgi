@@ -3,7 +3,7 @@
 
 cd $(dirname $0)
 tmp="$(mktemp -d)"
-handleName=$(echo $HTTP_COOKIE| get_handle_name| uri_decode)
+handleName="$(echo "${HTTP_COOKIE}" | get_handle_name | uri_decode)"
 
 printf "Content-type: text/html\n\n"
 

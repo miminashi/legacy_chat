@@ -1,7 +1,7 @@
 #!/bin/sh
 # vi: ft=sh
 
-encodedHandleName=$(echo $HTTP_COOKIE| get_handle_name)
+encodedHandleName="$(echo "${HTTP_COOKIE}" | get_handle_name)"
 
 grep '^text=' |
   head -n 1 |
