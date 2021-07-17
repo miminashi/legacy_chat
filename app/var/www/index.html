@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>2000年代初頭のインターネットにあった感じのチャット</title>
   </head>
   <body>
     <h1>2000年代初頭のインターネットにあった感じのチャット</h1>
-    <a href="/cgi-bin/index.cgi" >チャットルームにはいる</a>
+    <form action="/cgi-bin/handle-name.cgi" method="POST">
+      <input
+        type="text"
+        name="name"
+        id="name"
+        value="名無し"
+        pattern="\S+"
+        required
+      />
+      <input type="submit" value="チャットルームにはいる" />
+    </form>
   </body>
 </html>

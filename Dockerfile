@@ -10,7 +10,7 @@ RUN apt-get -y update && \
 RUN rm -rf /var/www/*
 COPY app/var/www/ /var/www/
 COPY app/etc/lighttpd/* /etc/lighttpd/
-COPY app/usr/local/bin/start.sh /usr/local/bin/
+COPY app/usr/local/bin/* /usr/local/bin/
 RUN chmod +x /usr/local/bin/start.sh
 RUN useradd -s /usr/sbin/nologin lighttpd
 

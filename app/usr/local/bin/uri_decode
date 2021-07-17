@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sed 's/%/\\x/g' |
+while read -r l; do
+  /usr/bin/printf '%b\n' "${l}"
+done
