@@ -15,5 +15,6 @@ if ! [ -f "${LOG}" ]; then
   chmod o+w "${LOG}"
 fi
 
+# --init オプションが無いと Ctrl-C で終了できない
 docker build -t legacy_chat . &&
-  docker run --rm -it -v "$(pwd)"/"${LOG}":/var/www/cgi-bin/log -p 8080:80 legacy_chat
+  docker run --init --rm -it -v "$(pwd)"/"${LOG}":/var/www/cgi-bin/log -p 8080:80 legacy_chat
