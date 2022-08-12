@@ -1,7 +1,13 @@
 #!/bin/sh
 # vi: ft=sh
 
-cd $(dirname $0)
+if ! cd "$(dirname "${0}")"; then
+  {
+    echo "カレントディレクトリの変更に失敗しました"
+    echo "終了します"
+  } >&2
+  exit 1
+fi
 tmp="$(mktemp -d)"
 handleName="$(echo "${HTTP_COOKIE}" | get_handle_name | uri_decode)"
 
@@ -32,7 +38,7 @@ tail -n 100 < log           |  # ログから末尾を100行を読み込む
 cut -d ',' -f 1 < "${tmp}"/last100 |
   uri_decode |
   while read -r l; do
-    /usr/bin/printf '<p>[%s]\n' "${l}"
+    printf '<p>[%s]\n' "${l}"
   done > "${tmp}"/name
 
 cut -d ',' -f 2- < "${tmp}"/last100 |

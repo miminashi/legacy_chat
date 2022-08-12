@@ -2,7 +2,13 @@
 
 LOG=log.debug
 
-cd $(dirname $0)
+if ! cd "$(dirname "${0}")"; then
+  {
+    echo "カレントディレクトリの移動に失敗しました"
+    echo "終了します"
+  } >&2
+  exit 1
+fi
 
 if ! [ -f "${LOG}" ]; then
   printf '' > "${LOG}"
@@ -10,4 +16,4 @@ if ! [ -f "${LOG}" ]; then
 fi
 
 docker build -t legacy_chat . &&
-  docker run --rm -t -v $(pwd)/"${LOG}":/var/www/cgi-bin/log -p 8080:80 legacy_chat
+  docker run --rm -it -v "$(pwd)"/"${LOG}":/var/www/cgi-bin/log -p 8080:80 legacy_chat

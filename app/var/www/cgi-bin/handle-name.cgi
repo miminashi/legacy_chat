@@ -6,7 +6,9 @@ name="$(
   cut -d '=' -f 2-
 )"
 
-printf 'Set-Cookie: handleName=%s; Path=/\n' "${name}"
+printf 'HTTP/1.1 302 Found\r\n'
+printf 'Set-Cookie: handleName=%s; Path=/\r\n' "${name}"
 
-printf 'Location: /cgi-bin/index.cgi\n'
-printf 'Status: 302 Found\n\n'
+printf 'Location: /cgi-bin/index.cgi\r\n'
+printf 'Status: 302 Found\r\n'
+printf '\r\n'
